@@ -1,4 +1,4 @@
-CXX      = g++-5
+CXX      = g++
 CXXFLAGS = -std=c++17 -g -Wall -Wextra -O3 -fopenmp
 OPTFLAGS = -march=native 
 

@@ -24,18 +24,16 @@ void write_int_dataset(std::string filename, const Ref<const ArrayXXc>& dataset)
 }
 
 int main(int argc, char *argv[]){
-    omp_set_num_threads(20);
+    omp_set_num_threads(23);
     Eigen::initParallel();
 
-    bool mnist = 0;
-    std::string dir_path = "/home/dmb2266/many_hash/";
+    bool mnist = 1;
+    std::string dir_path = "/rigel/home/dmb2266/instance-optimal-lsh/"; 
     Dataset test_dataset_obj, train_dataset_obj;
     if (mnist) {
-        std::string test_file = dir_path + "data/-idx3-ubyte";
         std::string train_file = dir_path + "data/train-images-idx3-ubyte";
 
         std::cout << "Reading Data" << std::endl;
-        test_dataset_obj.read_mnist(test_file);
         train_dataset_obj.read_mnist(train_file);
     } else {
         std::cout << "ImageNet" << std::endl;
@@ -46,7 +44,7 @@ int main(int argc, char *argv[]){
     
 
     std::cout << "Binarizing Data" << std::endl;
-    unsigned char t=70;
+    unsigned char t=1;
     //test_dataset_obj.set_thresh(t);
     train_dataset_obj.set_thresh(t);
     //test_dataset_obj.binarize_data();

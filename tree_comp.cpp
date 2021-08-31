@@ -19,14 +19,14 @@
 #include <ctime> 
 
 #define TIME_HORIZON_SHORT 0
-#define TIME_HORIZON_LONG 400 // previously 1500
-#define SWITCH_THRESH 150
+#define TIME_HORIZON_LONG 0 // previously 1500
+#define SWITCH_THRESH 700
 #define NUM_HASH_LARGE 1
 #define NUM_HASH_SMALL 1
 
 using namespace Eigen;
 
-std::string dir_path = "/home/dmb2266/many_hash/";
+std::string dir_path = "/rigel/home/dmb2266/instance-optimal-lsh/";
 
 /* write and read matrices to binary file */
 template<class Matrix>
@@ -142,7 +142,7 @@ void query_argmin(const Ref<const ArrayXXb>& dataset, const Ref<const ArrayXXf>&
     float min_obj = INFINITY;
     int min_datapoint_idx = -1;
 
-    #pragma omp parallel for default(shared) num_threads(38)
+    #pragma omp parallel for default(shared) num_threads(42)
     for (int i=0; i<num_images ; i++) {
 
         /*

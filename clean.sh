@@ -1,5 +1,5 @@
 #!/bin/bash
-num_trees=100
+num_trees=10
 for i in $(seq 0 $num_trees); do 
     echo $i
     rm trees/tree$i/dists/*

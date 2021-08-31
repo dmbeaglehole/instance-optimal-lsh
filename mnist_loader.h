@@ -10,7 +10,7 @@
 using namespace Eigen;
     
 #define BUCKET_SIZE 10
-#define FRAC 10 // 60000/FRAC images
+#define FRAC 1 // 60000/FRAC images
 #define LARGE_SIZE 1000000 // 10^6
 
 class Dataset {
